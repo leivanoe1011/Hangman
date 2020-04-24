@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <title>Hangman</title>
+</head>
+<body>
+    <p>
+        Press any key to get Started! <br>
+        Current Word <br>
+    </p>
+
+    <div id="empty-word">- - - - -</div>
+    
+    <h3>Wins <span id="user-wins">0</span></h3>
+    <h3>Number of guesses remaining <br> <span id="guess-remaining"></span> </h3>
+    <h3>Letters Already Guessed <span id="guessed-letters"></span> </h3>
+    
+    
+    <script type="text/javascript">
+
+        var loadWins = document.getElementById("user-wins");
+        var remainingGuessCnt = document.getElementById("guess-remaining");
+        var lettersGuessed = document.getElementById("guessed-letters");
+        var guessCnt = 14;
+        var wordArray = ["paper","scissor","rock","car","work"];
+        var lettersGuessed = [];
+        var currentWord = "";
+        
+        function randomWord(){
+
+            return wordArray.Math.floor(Math.random() * wordArray.length)
+        }
+
+        function resetGame(){
+            guessCnt = 14;
+            lettersGuessed = [];
+        }
+
+        currentWord = randomWord();
+
+
+        document.onkeyup() = function (event) {
+
+        }
+
+    
+    </script>
+</body>
+</html>
