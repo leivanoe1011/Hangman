@@ -112,6 +112,7 @@
         // Begin New Letter Entry
         // Only letters that not have been used before will enter here
         if(!currentLetters.includes(userEntry)){
+            
             currentLetters.push(userEntry);
 
             // Here we clean up the display of the Guessed letters
