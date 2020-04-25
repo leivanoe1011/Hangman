@@ -69,14 +69,15 @@
 
         var lines = "";
 
+        // Replace the empty line with Letter
         wordLines[index] = letter;
 
-        // Incorporate the new letter guessed
+        // Incorporate the new letter guessed into the Display "Letters Already Guessed"
         for(var i = 0; i < wordLines.length; i++){
             lines += wordLines[i] + " "
         }
 
-        // remove the last space
+        // remove the last space of the Display
         emptyLines.textContent = lines.substring(0, lines.length - 1);
     }
 

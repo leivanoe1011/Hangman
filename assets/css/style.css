@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'samureix';
     src: url('assets/fonts/Samureix-51ylz.ttf') format('truetype');
@@ -27,21 +28,22 @@ body {
 
 
 #title-row {
-    margin-top: 50px;
+    position: relative;
+    /* margin-top: 50px; */
     transform: skewY(-10deg);
-}
-
-.col {
-    background: none !important;
     background: transparent !important;
+    background-color: transparent !important;
+    z-index: 0 !important;
 }
 
 
 #particles-js {
-    height: 100%;
+    position: fixed;
+    background-size: cover;
+    height: 100vh;
     background: #262626;
-    background: linear-gradient(45deg,#e91e63, #262626);
-    z-index: 2;
+    background: linear-gradient(45deg,rgb(233, 30, 99), rgba(38, 38, 38));
+    z-index: 4 !important;
 }
 
 
@@ -52,6 +54,7 @@ div {
 h1 {
     font-family: 'OASIS' !important;
     font-size: 200px !important;
+    margin-top: 25px;
     margin-left: -100px;
     text-decoration: underline;
     /* line-height: 1.5px; */
@@ -59,10 +62,9 @@ h1 {
 
 
 #main-content {
-    background: transparent !important;
-    background-color: transparent !important;
-    background: none !important;
+    position: relative;
     margin-top: 100px;
+    z-index: 0 !important;
 }
 
 
