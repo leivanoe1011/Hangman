@@ -1,15 +1,86 @@
+@font-face {
+    font-family: 'samureix';
+    src: url('assets/fonts/Samureix-51ylz.ttf') format('truetype');
+ }
+
+ /*
+    Here are some of the fonts we can use
+    /* font-family: 'Nightmare Pills' !important; */
+    /* font-family: 'IBM 3270 Narrow' !important; */
+    /* font-family: 'IBM 3270 Semi-Narrow' !important; 
+ */
+
 
 body {
     /* Make sure the particle background covers the viewable page */
     height: 100vh;
     overflow: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    font-family: 'The Army of God' !important;
 }
+
+
+#title-row {
+    margin-top: 50px;
+    transform: skewY(-10deg);
+}
+
+
+#row {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
 
 #particles-js {
     height: 100%;
     background: #262626;
+    background: linear-gradient(45deg,#e91e63, #262626);
 }
+
 
 div {
     color: white;
 }
+
+h1 {
+    /* font-family: 'Nightmare Pills' !important; */
+    /* font-family: 'samureix' !important; */
+    /* font-family: 'PROGRESS PERSONAL USE' !important; */
+    font-family: 'OASIS' !important;
+    font-size: 200px !important;
+    margin-left: -100px;
+}
+
+#main-content {
+    background: transparent !important;
+    background-color: transparent !important;
+    margin-top: 100px;
+}
+
+#main-content > div {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+
+#game-instructions {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+#astronaut_img_container {
+    height: 200px;
+}
+
+#astronaut_img {
+    height: 250%;
+    margin-top: -150px;
+    margin-left: 75px;
+}
+
+#empty-word {
+    font-size: 30px;
+}
+
+

@@ -6,23 +6,64 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous"
+    >
     <title>Hangman</title>
 </head>
-<body>
-    <div id="particles-js">
-        <h2>
-            Press any key to get Started! <br>
-            Current Word <br>
-        </h2>
-    
-        <div id="empty-word">- - - - -</div>
-        
-        <h3>Wins <span id="user-wins">0</span></h3>
-        <h3>Number of guesses remaining <br> <span id="guess-remaining"></span> </h3>
-        <h3>Letters Already Guessed <span id="guessed-letters"></span> </h3>
-        
+<body id="particles-js">
+    <div class="container-fluid">
+
+        <div class="row" id="title-row">
+             <!-- Space filler to center the NavBar -->
+             <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4 col-xl-4" id="place-filler"></div>
+
+             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8" >
+                <h1>HANGMAN</h1> <br>
+                <!-- <audio autoplay>
+                    <source src="assets/music/Daft_Punk_-_One_More_Time_Qoret.mp3" type="audio/mpeg">
+                    <source src="assets/music/Daft-Punk-Around-The-World.mp3" type="audio/mpeg">  
+                    Your browser does not support the audio element.
+                </audio> -->
+                <!-- <a href="assets/music/Daft_Punk_-_One_More_Time_Qoret.com.mp3">Play music</a> -->
+             </div>
+            
+             <!-- Space filler to center the NavBar -->
+             <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4 col-xl-4"></div>
+        </div>
+
+        <div class="row" id ="main-content">
+
+             <!-- Space filler to center the NavBar -->
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4 col-xl-4" id="astronaut_img_container">
+                <img src="assets/images/astronaut4.jpg" alt="astrounaut" id="astronaut_img">
+            </div>
+
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8" class="game-instructions" >
+                <h2>
+                    Press any key to get Started! <br>
+                    Current Word <br>
+                </h2>
+            
+                <div id="empty-word">- - - - -</div>
+                
+                <h3>Wins: <span id="user-wins">0</span></h3>
+                <h3>Number of guesses remaining: <span id="guess-remaining">14</span> </h3>
+                <h3>Letters Already Guessed: <span id="guessed-letters">None</span> </h3>
+                
+            </div>
+            <!-- End of Col -->
+
+             <!-- Space filler to center the NavBar -->
+             <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4 col-xl-4"></div>
+          
+        </div>
+        <!-- End of Row -->
+
     </div>
-  
+   
+   
     
     <script src="assets/javascript/game.js"></script>
     <script src="assets/javascript/particles.js"></script>

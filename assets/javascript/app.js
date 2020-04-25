@@ -16,7 +16,8 @@ particlesJS('particles-js',
   {
     "particles": {
       "number": {
-        "value": 80,
+        // "value": 80, // Original Setting - How many particles we want displayed
+        "value": 5,
         "density": {
           "enable": true,
           "value_area": 800
@@ -26,13 +27,15 @@ particlesJS('particles-js',
         "value": "#ffffff"
       },
       "shape": {
-        "type": "circle",
+        // "type": "circle", // Original Setting - Shape
+        "type": "polygon",
         "stroke": {
           "width": 0,
           "color": "#000000"
         },
         "polygon": {
-          "nb_sides": 5
+          // "nb_sides": 5 // Original Setting - How many sides the shape
+          "nb_sides": 6 
         },
         "image": {
           "src": "img/github.svg",
@@ -41,7 +44,8 @@ particlesJS('particles-js',
         }
       },
       "opacity": {
-        "value": 0.5,
+        // "value": 0.5, // Original - The transparency of the shape
+        "value": 0.2,
         "random": false,
         "anim": {
           "enable": false,
@@ -51,17 +55,23 @@ particlesJS('particles-js',
         }
       },
       "size": {
-        "value": 5,
-        "random": true,
+        // "value": 5, // Original - the size of the shapes
+        "value": 80,
+        // "random": true, // Original - shapes will move randomly
+        "random": false,
         "anim": {
-          "enable": false,
-          "speed": 40,
-          "size_min": 0.1,
+          // "enable": false, // Original - Shapes will be animated. Shrink and expand
+          "enable": true, 
+          // "speed": 40, // Original - Speed of the animation.
+          "speed": 20,
+          // "size_min": 0.1, // original - The minimum size of the shape
+          "size_min": 30,
           "sync": false
         }
       },
       "line_linked": {
-        "enable": true,
+        // "enable": true, // Original - It will show shapes linked to other shapes
+        "enable": false,
         "distance": 150,
         "color": "#ffffff",
         "opacity": 0.4,
@@ -85,11 +95,13 @@ particlesJS('particles-js',
       "detect_on": "canvas",
       "events": {
         "onhover": {
-          "enable": true,
+          // "enable": true, // Original - it will move shapes when hovering
+          "enable": false,
           "mode": "repulse"
         },
         "onclick": {
-          "enable": true,
+          // "enable": true, // Original - it will move shapen when clicked
+          "enable": false,
           "mode": "push"
         },
         "resize": true
