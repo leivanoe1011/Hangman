@@ -27,8 +27,25 @@ body {
 }
 
 
+#particles-js {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    height: 100vh;
+    background: #262626;
+    background: linear-gradient(45deg,rgb(233, 30, 99), rgba(38, 38, 38));
+    z-index: 4 !important;
+}
+
+
 #title-row {
-    position: relative;
+    position: fixed;
+    top: 2.5%;
+    right: 25%;
+    left:auto;
     /* margin-top: 50px; */
     transform: skewY(-10deg);
     background: transparent !important;
@@ -36,14 +53,13 @@ body {
     z-index: 0 !important;
 }
 
-
-#particles-js {
+#main-content {
     position: fixed;
-    background-size: cover;
-    height: 100vh;
-    background: #262626;
-    background: linear-gradient(45deg,rgb(233, 30, 99), rgba(38, 38, 38));
-    z-index: 4 !important;
+    top: 35%;
+    right: 25%;
+    left: 25%;
+    margin-top: 100px;
+    z-index: 0 !important;
 }
 
 
@@ -55,16 +71,9 @@ h1 {
     font-family: 'OASIS' !important;
     font-size: 200px !important;
     margin-top: 25px;
-    margin-left: -100px;
+    /* margin-left: -100px; */
     text-decoration: underline;
     /* line-height: 1.5px; */
-}
-
-
-#main-content {
-    position: relative;
-    margin-top: 100px;
-    z-index: 0 !important;
 }
 
 
@@ -75,9 +84,11 @@ h1 {
 
 
 #astronaut_img {
+    position: relative;
+    left: -95%;
     height: 250%;
-    margin-top: -150px;
-    margin-left: -25px;
+    top: -75%;
+    
 }
 
 #empty-word {
