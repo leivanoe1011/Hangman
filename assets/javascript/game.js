@@ -163,3 +163,54 @@
     }
     // End On Key Up function
 
+
+    // Music Player Function
+    // Only play music when the DOM content is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        //the event occurred
+        var play = document.getElementById("playlist");
+
+        var playlist = play.children;
+    
+        var loadSongName = document.getElementById("song-name");
+    
+        function getRandomSong() {
+            
+            return Math.floor(Math.random() * playlist.length);
+            
+        }
+    
+    
+        // get the source file
+        function audioPlayer(){
+            var song = playlist[getRandomSong()];
+            var songSource = song.src;
+            var songName = song.getAttribute('data-song');
+    
+            // pass the song source path
+            var audio = new Audio(songSource);
+            loadSongName.textContent = songName.replace(/_/g," ");
+            audio.play();    
+        }
+    
+        audioPlayer();
+    
+    
+        // Listen to song ending and play next one
+        play.onended = function(){
+            alert("song ended");
+            audioPlayer();
+        };
+
+
+        play.addEventListener('ended',function(){
+            //play next song
+            alert("song ended2");
+            audioPlayer();
+          });
+
+      })
+
+
+   
+

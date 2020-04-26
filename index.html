@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Solves the FavIcon 404 Error -->
+    <link rel="icon" href="data:;base64,=">
+
     <title>Hangman</title>
 
 </head>
@@ -25,18 +28,23 @@
             <!-- <div class="col col-xs-2 col-sm-2 col-md-2 col-lg-4 col-xl-4" id="place-filler"></div> -->
 
             <div class="col col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-8" >
-               <h1>HANGMAN</h1> <br>
-              
-               <audio id="playlist">
+                <h1>HANGMAN</h1> <br>
+                <div id="song-name-load">
+                    <span id="song-name"></span>
+                </div>
+                <audio id="playlist">
                    
-                   <source class="current-song song-group" src="assets/music/08 Get Lucky (feat. Pharrell Williams & Nile Rodgers).m4a" type="audio/mp4" > 
+                   <source class="current-song song-group" src="assets/music/08 Get Lucky (feat. Pharrell Williams & Nile Rodgers).m4a" type="audio/mp4" data-song = "Get_Lucky_By_Daft_Punk"> 
 
-                   <source class="song-group" src="assets/music/One More Time (Qoret.com).mp3" type="audio/mpeg">  
+                    <source class="song-group" src="assets/music/One More Time (Qoret.com).mp3" type="audio/mpeg" data-song = "One_More_Time_By_Daft_Punk">  
 
-                   <source class="song-group" src="assets/music/Around The World.mp3" type="audio/mpeg">
+                    <source class="song-group" src="assets/music/Around The World.m4a" type="audio/mp4"data-song = "Around_The_World_By_Daft_Punk">
+                        
                                                 
                    Your browser does not support the audio element.
-               </audio>
+                </audio>
+
+               
 
                
             </div>
@@ -54,22 +62,22 @@
 
             <div class="col col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8" id="game-instructions" >
                 <h2>
-                    Press any key to get Started! <br>
+                    Press any key to get Started! <br> <br>
                     Current Word <br>
                 </h2>
             
                 <div id="empty-word">- - - - -</div>
                 
-                <h3>Wins: <span id="user-wins">0</span></h3>
-                <h3>Number of guesses remaining: <span id="guess-remaining">14</span> </h3>
-                <h3>Letters Already Guessed: <span id="guessed-letters">None</span> </h3>
+                <h3>Wins : <span id="user-wins">0</span></h3>
+                <h3>Guesses remaining : <span id="guess-remaining">14</span> </h3>
+                <h3>Letters Guessed : <span id="guessed-letters">None</span> </h3>
                 
             </div>
             <!-- End of Col -->
 
              <!-- Space filler to center the NavBar -->
              <div class="col col-xs-2 col-sm-2 col-md-2 col-lg-4 col-xl-4" id="empty-space"></div>
-          
+
         </div>
         <!-- End of Row -->
 
