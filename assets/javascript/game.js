@@ -164,53 +164,84 @@
     // End On Key Up function
 
 
+
     // Music Player Function
+    var player = document.getElementById("playlist");
+
+    var playlist = player.children;
+
+    var loadSongName = document.getElementById("song-name");
+
+
+    // Generate random ID
+    function getRandomSong() {
+        
+        return Math.floor(Math.random() * playlist.length);
+        
+    }
+
+
+    // get the source file
+    function audioPlayer(){
+
+        // Get random song
+        var song = playlist[getRandomSong()];
+
+        // Get source mp3 path
+        var songSource = song.src;
+
+        // Get song name
+        var songName = song.getAttribute('data-song');
+
+        // pass the song source path
+        var audio = new Audio(songSource);
+
+        // remove all underscores before loading to the song name to be displayed in HTML
+        loadSongName.textContent = songName.replace(/_/g," ");
+
+        // Play audio
+        audio.play();    
+
+        // audio.onplaying()
+
+    }
+    // End of Audio Player ()
+
+
+    // Beginning of Dom Content Loaded
     // Only play music when the DOM content is ready
     document.addEventListener('DOMContentLoaded', function() {
         //the event occurred
-        var play = document.getElementById("playlist");
-
-        var playlist = play.children;
-    
-        var loadSongName = document.getElementById("song-name");
-    
-        function getRandomSong() {
-            
-            return Math.floor(Math.random() * playlist.length);
-            
-        }
-    
-    
-        // get the source file
-        function audioPlayer(){
-            var song = playlist[getRandomSong()];
-            var songSource = song.src;
-            var songName = song.getAttribute('data-song');
-    
-            // pass the song source path
-            var audio = new Audio(songSource);
-            loadSongName.textContent = songName.replace(/_/g," ");
-            audio.play();    
-        }
-    
+       
         audioPlayer();
-    
-    
-        // Listen to song ending and play next one
-        play.onended = function(){
-            alert("song ended");
+        console.log("inside the dom");
+      
+        // It will play when the media is no longer playing
+        player.addEventListener('play', function() {
             audioPlayer();
-        };
+            console.log("Playing inside of DOM")
+        });
 
-
-        play.addEventListener('ended',function(){
-            //play next song
-            alert("song ended2");
+        
+        // audioPlayer();
+        player.addEventListener('ended', function() {
             audioPlayer();
-          });
+            console.log("Ended inside of DOM")
+        });
 
-      })
+        // When the page and content is loaded this will get triggered
+        player.addEventListener('loadedmetadata', function() {
+            audioPlayer();
+            console.log("loadedmetadata inside of DOM")
+        });
 
+        player.autoplay = true;
+    
+    });
+    // End of Dom Content Loaded
 
+    // Testing the Player Listener outside the DOM
+    // Cannot have any listeners outside of the DOM Content Load because the Browser will error out 
+    // Letting us know the user must interact with the content first.
    
 

@@ -77,17 +77,19 @@ h1 {
     /* line-height: 1.5px; */
 }
 
+/* ID of the tag that populates the Song Name */
 #song-name-load {
     font-size: 25px;
 }
 
+/* The image lives here */
 #astronaut_img_container {
     height: 250px;
     /* margin: 5px; */
     background-color: none !important;
 }
 
-
+/* The image ID */
 #astronaut_img {
     position: relative;
     left: -95%;
@@ -96,11 +98,12 @@ h1 {
     
 }
 
+/* This is the ID that holds the Empty Lines */
 #empty-word {
     font-size: 30px;
 }
 
-
+/* Containers where the instructions live */
 #game-instructions {
     background: none !important;
     background-color: none !important;
@@ -129,6 +132,7 @@ ul {
     #astronaut_img_container {
         width: 50%;
         height: 50%;
+        margin: 10px;
     }
     
     #game-instructions {
@@ -145,6 +149,7 @@ ul {
     #astronaut_img_container {
         width: 50%;
         height: 50%;
+        margin: 10px;
     }
     #game-instructions {
         font-size: 10%;
@@ -160,6 +165,7 @@ ul {
     #astronaut_img_container {
         width: 50%;
         height: 50%;
+        margin: 10px;
     }
     #game-instructions {
         font-size: 10%;
