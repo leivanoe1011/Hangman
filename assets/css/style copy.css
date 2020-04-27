@@ -1,0 +1,173 @@
+
+@font-face {
+    font-family: 'samureix';
+    src: url('assets/fonts/Samureix-51ylz.ttf') format('truetype');
+ }
+
+ /*
+
+    Here are some of the fonts we can use
+
+    /* font-family: 'Nightmare Pills' !important; */
+    /* font-family: 'IBM 3270 Narrow' !important; */
+    /* font-family: 'Nightmare Pills' !important; */
+    /* font-family: 'samureix' !important; */
+    /* font-family: 'PROGRESS PERSONAL USE' !important; */
+    /* font-family: 'IBM 3270 Semi-Narrow' !important; 
+    
+ */
+
+
+body {
+    /* Make sure the particle background covers the viewable page */
+    height: 100vh;
+    overflow: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    font-family: 'The Army of God' !important;
+}
+
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    height: 100vh;
+    background: #262626;
+    background: linear-gradient(45deg,rgb(233, 30, 99), rgba(38, 38, 38));
+    z-index: 4 !important;
+}
+
+
+#title-row {
+    position: fixed;
+    top: 2.5%;
+    right: 25%;
+    left:auto;
+    /* margin-top: 50px; */
+
+    background: transparent !important;
+    background-color: transparent !important;
+    z-index: 0 !important;
+}
+
+#main-content {
+    position: fixed;
+    top: 35%;
+    right: 25%;
+    left: 25%;
+    margin-top: 100px;
+    z-index: 0 !important;
+}
+
+
+div {
+    color: white;
+}
+
+h1 {
+    font-family: 'OASIS' !important;
+    font-size: 200px !important;
+    margin-top: 25px;
+    /* margin-left: -100px; */
+    text-decoration: underline;
+    transform: skewY(-10deg);
+    /* line-height: 1.5px; */
+}
+
+/* ID of the tag that populates the Song Name */
+#song-name-load {
+    font-size: 25px;
+}
+
+/* The image lives here */
+#astronaut_img_container {
+    height: 250px;
+    /* margin: 5px; */
+    background-color: none !important;
+}
+
+/* The image ID */
+#astronaut_img {
+    position: relative;
+    left: -95%;
+    height: 250%;
+    top: -75%;
+    
+}
+
+/* This is the ID that holds the Empty Lines */
+#empty-word {
+    font-size: 30px;
+}
+
+/* Containers where the instructions live */
+#game-instructions {
+    background: none !important;
+    background-color: none !important;
+}
+
+
+#empty-space {
+    display: none;
+}
+
+ul {
+    display: none;
+}
+
+.current-song {
+    display: inline !important;
+}
+
+
+@media screen and (min-width:414px) and (max-width:768px){
+    
+    h1 {
+        font-size: 10px;
+    }
+     
+    #astronaut_img_container {
+        width: 50%;
+        height: 50%;
+        margin: 10px;
+    }
+    
+    #game-instructions {
+        font-size: 10%;
+    }
+}
+
+@media screen and (min-width:376px) and (max-width:414px){
+   
+    h1 {
+        font-size: 10px;
+    }
+
+    #astronaut_img_container {
+        width: 50%;
+        height: 50%;
+        margin: 10px;
+    }
+    #game-instructions {
+        font-size: 10%;
+    }
+}
+
+@media screen and (max-width:375px){
+
+    h1 {
+        font-size: 10px;
+    }
+
+    #astronaut_img_container {
+        width: 50%;
+        height: 50%;
+        margin: 10px;
+    }
+    #game-instructions {
+        font-size: 10%;
+    }
+}

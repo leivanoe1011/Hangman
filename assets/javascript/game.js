@@ -245,3 +245,7 @@
     // Letting us know the user must interact with the content first.
    
 
+    // Next solution track the timing of the song. Create a timer and once the timer is up then play the next song. 
+
+
+

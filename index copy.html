@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous"
+    >
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Solves the FavIcon 404 Error -->
+    <link rel="icon" href="data:;base64,=">
+
+    <title>Hangman</title>
+
+</head>
+<body>
+    <div class="container-fluid" id="particles-js">
+        
+        <div class="row" id="title-row">
+            <!-- Space filler to center the NavBar -->
+            <!-- <div class="col col-xs-2 col-sm-2 col-md-2 col-lg-4 col-xl-4" id="place-filler"></div> -->
+
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-8" >
+                <h1>HANGMAN</h1> <br>
+                <div id="song-name-load">
+                    <span id="song-name"></span>
+                </div>
+                <audio id="playlist">
+                   
+                   <source class="active" src="assets/music/08 Get Lucky (feat. Pharrell Williams & Nile Rodgers).m4a" type="audio/mp4" data-song = "Get_Lucky_By_Daft_Punk"> 
+
+                    <source class="song-group" src="assets/music/One More Time (Qoret.com).mp3" type="audio/mpeg" data-song = "One_More_Time_By_Daft_Punk">  
+
+                    <source class="song-group" src="assets/music/Around The World.m4a" type="audio/mp4"data-song = "Around_The_World_By_Daft_Punk">
+                        
+                                                
+                   Your browser does not support the audio element.
+                </audio>
+
+               
+
+               
+            </div>
+           
+            <!-- Space filler to center the NavBar -->
+            <!-- <div class="col col-xs-2 col-sm-2 col-md-2 col-lg-4 col-xl-4"></div> -->
+       </div>
+
+        <div class="row" id ="main-content">
+
+             <!-- Space filler to center the NavBar -->
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-4 col-xl-4" id="astronaut_img_container">
+                <img src="assets/images/astronaut4.jpg" alt="astrounaut" id="astronaut_img">
+            </div>
+
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8" id="game-instructions" >
+                <h2>
+                    Press any key to get Started! <br> <br>
+                    Current Word <br>
+                </h2>
+            
+                <div id="empty-word">- - - - -</div>
+                
+                <h3>Wins : <span id="user-wins">0</span></h3>
+                <h3>Guesses remaining : <span id="guess-remaining">14</span> </h3>
+                <h3>Letters Guessed : <span id="guessed-letters">None</span> </h3>
+                
+            </div>
+            <!-- End of Col -->
+
+             <!-- Space filler to center the NavBar -->
+             <!-- <div class="col-xs-2 col-sm-2 col-md-2 col-lg-4 col-xl-4" id="empty-space"></div> -->
+
+        </div>
+        <!-- End of Row -->
+
+    </div>
+   <!-- End Container Fluid -->
+   
+    
+    <script src="assets/javascript/game.js"></script>
+    <script src="assets/javascript/particles.js"></script>
+    <script src="assets/javascript/app.js"></script>
+
+
+</body>
+</html>
