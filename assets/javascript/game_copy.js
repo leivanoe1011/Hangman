@@ -206,7 +206,13 @@
 
         var getSongDuration = player.duration;
 
-        // setTimeout(alert("duration " + getSongDuration),getSongDuration);
+        // alert("getSongDuration " + getSongDuration);
+
+        var songDuration = setTimeout(function(){
+            audio.pause();
+            audio.currentTime = 0;
+            audioPlayer();
+        },20000);
 
     }
     // End of Audio Player ()
@@ -220,28 +226,30 @@
         
       
         // It will play when the media is no longer playing
-        player.addEventListener('play', function() {
-            audioPlayer();
-            console.log("Playing inside of DOM")
-        });
+        // player.addEventListener('play', function() {
+        //     audioPlayer();
+        //     console.log("Playing inside of DOM")
+        // });
 
         
         // audioPlayer();
-        player.addEventListener('ended', function() {
-            audioPlayer();
-            console.log("Ended inside of DOM")
-        });
+        // player.addEventListener('ended', function() {
+        //     audioPlayer();
+        //     console.log("Ended inside of DOM")
+        // });
 
         // When the page and content is loaded this will get triggered
-        player.addEventListener('loadedmetadata', function() {
-            audioPlayer();
-            console.log("loadedmetadata inside of DOM")
-        });
+        // player.addEventListener('loadedmetadata', function() {
+        //     audioPlayer();
+        //     console.log("loadedmetadata inside of DOM")
+        // });
 
-        player.autoplay = true;
+        console.log("inside the dom");
+
+        // player.autoplay = true;
 
         audioPlayer();
-        console.log("inside the dom");
+        
     
     });
     // End of Dom Content Loaded
