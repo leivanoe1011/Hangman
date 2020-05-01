@@ -220,7 +220,7 @@
         // Once the song ends, we restart the player
         playMusic();
 
-        // The functions below can be used to stop the player
+        // The functions below can be used to stop the player. They have to be used in conjunction
         // player.pause();
         // player.currentTime = 0
    }
