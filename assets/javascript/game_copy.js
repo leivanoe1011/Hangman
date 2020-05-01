@@ -199,67 +199,80 @@
         // remove all underscores before loading to the song name to be displayed in HTML
         loadSongName.textContent = songName.replace(/_/g," ");
 
+
         // Play audio
-        audio.play();    
+        player.play();    
 
         // audio.onplaying()
 
         var getSongDuration = player.duration;
+        
 
-        // alert("getSongDuration " + getSongDuration);
+        alert("getSongDuration " + getSongDuration);
 
         var songDuration = setTimeout(function(){
-            audio.pause();
-            audio.currentTime = 0;
+            player.pause();
+            player.currentTime = 0;
             audioPlayer();
-        },20000);
+        },360);
 
     }
     // End of Audio Player ()
 
 
+    function cs_change_music(music)
+   { 
+        player.pause();
+        player.setAttribute('src', music);
+        player.load();
+        player.play();
+   }
+
     // Beginning of Dom Content Loaded
     // Only play music when the DOM content is ready
     document.addEventListener('DOMContentLoaded', function() {
-        //the event occurred
-       
-        
-      
-        // It will play when the media is no longer playing
-        // player.addEventListener('play', function() {
-        //     audioPlayer();
-        //     console.log("Playing inside of DOM")
-        // });
 
-        
-        // audioPlayer();
-        // player.addEventListener('ended', function() {
-        //     audioPlayer();
-        //     console.log("Ended inside of DOM")
-        // });
-
-        // When the page and content is loaded this will get triggered
-        // player.addEventListener('loadedmetadata', function() {
-        //     audioPlayer();
-        //     console.log("loadedmetadata inside of DOM")
-        // });
 
         console.log("inside the dom");
 
         // player.autoplay = true;
 
-        audioPlayer();
-        
-    
+        // audioPlayer();
+        playMusic();
+
+
     });
-    // End of Dom Content Loaded
 
-    // Testing the Player Listener outside the DOM
-    // Cannot have any listeners outside of the DOM Content Load because the Browser will error out 
-    // Letting us know the user must interact with the content first.
-   
+    function playMusic(){
+        var song = playlist[getRandomSong()];
 
-    // Next solution track the timing of the song. Create a timer and once the timer is up then play the next song. 
+        // Get source mp3 path
+        var songSource = song.src;
+
+        // Get song name
+        var songName = song.getAttribute('data-song');
+
+        loadSongName.textContent = songName.replace(/_/g," ");
 
 
+        player.pause();
 
+        player.setAttribute('src', songSource);
+
+        player.load();
+
+        player.play();
+
+        console.log(player.currentSrc);
+
+        var playerDuration = player.duration;
+
+
+        console.log(player.getAttribute('duration'));
+
+    }
+
+   player.onended = function() {
+       console.log("song has ended");
+       playMusic();
+   }

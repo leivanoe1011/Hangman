@@ -180,15 +180,11 @@
         
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
 
-        // Once the DOM loads, we can play the music
-        playMusic();
+    // get the source file
+    function audioPlayer(){
 
-    });
-
-    function playMusic(){
-
+        // Get random song
         var song = playlist[getRandomSong()];
 
         // Get source mp3 path
@@ -197,21 +193,73 @@
         // Get song name
         var songName = song.getAttribute('data-song');
 
+        // pass the song source path
+        var audio = new Audio(songSource);
+
+        // remove all underscores before loading to the song name to be displayed in HTML
         loadSongName.textContent = songName.replace(/_/g," ");
 
-        player.pause();
+        // Play audio
+        audio.play();    
 
-        player.setAttribute('src', songSource);
+        // audio.onplaying()
 
-        player.load();
+        var getSongDuration = player.duration;
 
-        player.play();
+        alert("getSongDuration " + Math.round(getSongDuration));
+
+        var songDuration = setTimeout(function(){
+            audio.pause();
+            audio.currentTime = 0;
+            audioPlayer();
+        },Math.round(getSongDuration));
 
     }
+    // End of Audio Player ()
 
-    // function listens when the player song ends
-   player.onended = function() {
-        // Once the song ends, we restart the player
-        playMusic();
-   }
+
+    // Beginning of Dom Content Loaded
+    // Only play music when the DOM content is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        //the event occurred
+       
+        
+      
+        // It will play when the media is no longer playing
+        // player.addEventListener('play', function() {
+        //     audioPlayer();
+        //     console.log("Playing inside of DOM")
+        // });
+
+        
+        // audioPlayer();
+        // player.addEventListener('ended', function() {
+        //     audioPlayer();
+        //     console.log("Ended inside of DOM")
+        // });
+
+        // When the page and content is loaded this will get triggered
+        // player.addEventListener('loadedmetadata', function() {
+        //     audioPlayer();
+        //     console.log("loadedmetadata inside of DOM")
+        // });
+
+        console.log("inside the dom");
+
+        // player.autoplay = true;
+
+        audioPlayer();
+        
+    
+    });
+    // End of Dom Content Loaded
+
+    // Testing the Player Listener outside the DOM
+    // Cannot have any listeners outside of the DOM Content Load because the Browser will error out 
+    // Letting us know the user must interact with the content first.
+   
+
+    // Next solution track the timing of the song. Create a timer and once the timer is up then play the next song. 
+
+
 
