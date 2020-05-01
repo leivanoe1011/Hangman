@@ -180,6 +180,7 @@
         
     }
 
+    // Listen for the DOM to load before playing music
     document.addEventListener('DOMContentLoaded', function() {
 
         // Once the DOM loads, we can play the music
@@ -189,6 +190,7 @@
 
     function playMusic(){
 
+        // Load random Array index
         var song = playlist[getRandomSong()];
 
         // Get source mp3 path
@@ -197,12 +199,16 @@
         // Get song name
         var songName = song.getAttribute('data-song');
 
+        // populate the song name to the application
         loadSongName.textContent = songName.replace(/_/g," ");
 
+        // if the a song is playing pause
         player.pause();
 
+        // load the new song
         player.setAttribute('src', songSource);
 
+        // load the song first before playing
         player.load();
 
         player.play();
