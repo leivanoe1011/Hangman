@@ -219,5 +219,9 @@
    player.onended = function() {
         // Once the song ends, we restart the player
         playMusic();
+
+        // The functions below can be used to stop the player
+        // player.pause();
+        // player.currentTime = 0
    }
 
