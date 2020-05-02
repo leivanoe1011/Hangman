@@ -11,6 +11,7 @@
     font-family: Georgia, 'Times New Roman', Times, serif !important;
     font-family: 'The Army of God' !important;
     color: white;
+    overflow: auto;
 }
 
 
@@ -57,8 +58,9 @@ h1 {
 
 
 #astronaut_img {
-    width: 200%;
+    margin: 25px;
     margin-top: -50px;
+    width: 200px;
     background: transparent;
 }
 
@@ -108,7 +110,13 @@ h1 {
  }
 
 /* // Large devices (desktops, 992px and up) */
-/* @media (min-width: 992px) { ... } */
+@media (min-width: 992px) {  
+    #astronaut_img{
+        width: 700px !important;
+        height: 700px;
+        margin-right: -100px;
+    }
+} 
 
 /* // Extra large devices (large desktops, 1200px and up) */
 /* @media (min-width: 1200px) { ... } */
