@@ -12,6 +12,64 @@
     */
 
 
+
+
+    // Music Player Function
+    var player = document.getElementById("playlist");
+
+    var playlist = player.children;
+
+    var loadSongName = document.getElementById("song-name");
+
+
+    // Generate random ID
+    function getRandomSong() {
+        
+        return Math.floor(Math.random() * playlist.length);
+        
+    }
+
+
+    function playMusic(){
+
+        // Load random Array index
+        var song = playlist[getRandomSong()];
+
+        // Get source mp3 path
+        var songSource = song.src;
+
+        // Get song name
+        var songName = song.getAttribute('data-song');
+
+        // populate the song name to the application
+        loadSongName.textContent = songName.replace(/_/g," ");
+
+        // if the a song is playing pause
+        player.pause();
+
+        // load the new song
+        player.setAttribute('src', songSource);
+
+        // load the song first before playing
+        player.load();
+
+        player.play();
+
+    }
+
+    // function listens when the player song ends
+    player.onended = function() {
+        // Once the song ends, we restart the player
+        playMusic();
+
+        // The functions below can be used to stop the player. They have to be used in conjunction
+        // player.pause();
+        // player.currentTime = 0
+    }
+
+
+    
+
     // Variables will be created once the Page/DOM is loaded
     var loadWins = document.getElementById("user-wins");
     var remainingGuessCnt = document.getElementById("guess-remaining");
@@ -172,60 +230,6 @@
     // End On Key Up function
 
 
-
-
-    // Music Player Function
-    var player = document.getElementById("playlist");
-
-    var playlist = player.children;
-
-    var loadSongName = document.getElementById("song-name");
-
-
-    // Generate random ID
-    function getRandomSong() {
-        
-        return Math.floor(Math.random() * playlist.length);
-        
-    }
-
-
-    function playMusic(){
-
-        // Load random Array index
-        var song = playlist[getRandomSong()];
-
-        // Get source mp3 path
-        var songSource = song.src;
-
-        // Get song name
-        var songName = song.getAttribute('data-song');
-
-        // populate the song name to the application
-        loadSongName.textContent = songName.replace(/_/g," ");
-
-        // if the a song is playing pause
-        player.pause();
-
-        // load the new song
-        player.setAttribute('src', songSource);
-
-        // load the song first before playing
-        player.load();
-
-        player.play();
-
-    }
-
-    // function listens when the player song ends
-    player.onended = function() {
-        // Once the song ends, we restart the player
-        playMusic();
-
-        // The functions below can be used to stop the player. They have to be used in conjunction
-        // player.pause();
-        // player.currentTime = 0
-    }
 
 
 
