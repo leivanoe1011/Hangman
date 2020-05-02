@@ -23,6 +23,7 @@
     var wordLines = [];
     var currentWord = "";
     var wins = 0;
+    var isPlayerPlaying = false;
 
 
     function resetGame(){
@@ -104,7 +105,14 @@
     // When a key is pressed, the function below will begin
     document.onkeyup = function (event) {
         
-        console.log("Current Word " + currentWord);
+
+        if(isPlayerPlaying === false){
+            playMusic();
+            isPlayerPlaying = true;
+        };
+        
+
+        // console.log("Current Word " + currentWord);
 
         var userEntry = event.key.toLowerCase();
         var currentGuesses = "";
@@ -165,6 +173,7 @@
 
 
 
+
     // Music Player Function
     var player = document.getElementById("playlist");
 
@@ -180,13 +189,6 @@
         
     }
 
-    // Listen for the DOM to load before playing music
-    document.addEventListener('DOMContentLoaded', function() {
-
-        // Once the DOM loads, we can play the music
-        playMusic();
-
-    });
 
     function playMusic(){
 
@@ -216,12 +218,32 @@
     }
 
     // function listens when the player song ends
-   player.onended = function() {
+    player.onended = function() {
         // Once the song ends, we restart the player
         playMusic();
 
         // The functions below can be used to stop the player. They have to be used in conjunction
         // player.pause();
         // player.currentTime = 0
-   }
+    }
+
+
+
+    // Listen for the DOM to load before playing music
+    // document.addEventListener('DOMContentLoaded', function() {
+
+    //     // Once the DOM loads, we can play the music
+    //     playMusic();
+
+    // });
+
+    // window.addEventListener('DOMContentLoaded', (event) => {
+    //     console.log('DOM fully loaded and parsed');
+    //     playMusic();
+    // });
+
+
+    
+
+
 
