@@ -68,7 +68,7 @@
     }
 
 
-    
+
 
     // Variables will be created once the Page/DOM is loaded
     var loadWins = document.getElementById("user-wins");
@@ -164,6 +164,7 @@
     document.onkeyup = function (event) {
         
 
+        // Allows to automatically play music after the user interacts with DOM
         if(isPlayerPlaying === false){
             playMusic();
             isPlayerPlaying = true;
